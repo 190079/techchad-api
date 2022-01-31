@@ -1,9 +1,8 @@
 
 const mongoose = require("mongoose");
-const conf = require("../functions/mongo_var")
+const conf = require("./mongo_var")
 // Replace this with your MONGOURI.
 const MONGOURI ="mongodb://"+conf.user+":"+conf.pass+"@"+conf.URL+":27017/"+conf.DB;
-console.log(MONGOURI);
 const InitiateMongoServer = async () => {
   try {
     await mongoose.connect(MONGOURI); 

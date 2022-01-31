@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ServiceSchema = new mongoose.Schema({
+const Projectschema = new mongoose.Schema({
     _id : {
         type: String,
         required: true
@@ -19,6 +19,6 @@ const ServiceSchema = new mongoose.Schema({
     }
 });
 
-const Services = mongoose.model("services",ServiceSchema);
+const ProjectsModel = mongoose.model("Projects",Projectschema);
 
-module.exports = Services;
+module.exports = ProjectsModel;

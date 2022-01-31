@@ -1,7 +1,7 @@
 
 const express = require('express');
 const bodyparser = require('body-parser');
-const services = require('./src/functions/services');
+const projects = require('./src/functions/Projects');
 const InitiateMongoServer = require('./src/mongodb/db');
 
 InitiateMongoServer();
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.use("/services",services);
+app.use("/projects",projects);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

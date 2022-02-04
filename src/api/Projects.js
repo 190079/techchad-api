@@ -7,8 +7,8 @@ router.get("/", async (req,res) => {
     const projects = await projectModel.find({});
     try {
         if (projects.length == 0 ){
-            res.json({"error": "no services found"});
-            console.log({"error" : "no services found"});
+            res.json({"error": "no projects found"});
+            console.log({"error" : "no projects found"});
             return
         }
         res.json(projects);

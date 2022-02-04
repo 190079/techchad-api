@@ -7,10 +7,11 @@ router.get("/", async (req,res) => {
     const Services = await serviceModel.find({});
     try {
         if (Services.length == 0 ){
-            res.json({"error": "no services found"});
+            res.json();
             console.log({"error" : "no services found"});
             return
         }
+        console.log(Services)
         res.json(Services);
     } catch (error) {
         res.status(500).send(error);

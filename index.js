@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const projects = require('./src/api/Projects');
 const services = require('./src/api/Services');
-
+const auth = require('./src/api/Auth');
+require('dotenv').config()
 const InitiateMongoServer = require('./src/mongodb/db');
 
 InitiateMongoServer();
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 //  JSON API server
 app.use("/projects",projects);
 app.use("/services",services);
+app.use("/auth",auth);
 //  static routes for images
 app.use("/images",express.static('./src/public/images/'));
 
